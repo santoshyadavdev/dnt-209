@@ -1,0 +1,16 @@
+<h1>
+  Employee Name
+</h1>
+<div [hidden]="visible">
+  <!-- interpolation -->
+  {{name}}
+</div>
+<!-- property binding -->
+<div [innerText]="age">
+
+</div>
+
+<!-- event binding -->
+<button (click)="toggle()">Toggle</button>
+
+<input type="text" [value]="name" (change)="changeName($event.target.value)">

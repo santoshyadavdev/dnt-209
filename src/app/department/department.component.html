@@ -1,0 +1,38 @@
+<h1>
+  Department Details
+</h1>
+<div *ngIf="visible">
+  {{department.id}}
+  {{department.name}}
+  {{department.hod}}
+  {{department.count}}
+</div>
+
+<button (click)="showDetails()">{{visible? 'hide': 'show'}}</button>
+
+<h1>Department List</h1>
+<!-- {{departmentList}} -->
+<table>
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>Even</th>
+      <th>Odd</th>
+      <th>Id</th>
+      <th>Name</th>
+      <th>HOD</th>
+      <th>count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let dept of departmentList;let i=index;let e=even;let o=odd">
+      <td>{{i}}</td>
+      <td>{{e}}</td>
+      <td>{{o}}</td>
+      <td>{{dept.id}}</td>
+      <td [innerText]="dept.name"></td>
+      <td>{{dept.hod}}</td>
+      <td>{{dept.count}}</td>
+    </tr>
+  </tbody>
+</table>
