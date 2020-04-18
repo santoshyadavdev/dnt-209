@@ -1,5 +1,18 @@
 <h1>
   Hello World!
 </h1>
-<dnt-employee></dnt-employee>
-<dnt-department></dnt-department>
+<!-- <dnt-employee></dnt-employee>
+<dnt-department></dnt-department> -->
+
+<div [ngSwitch]="role">
+  <div *ngSwitchCase="'admin'">
+    <dnt-employee></dnt-employee>
+    <dnt-department></dnt-department>
+  </div>
+  <div *ngSwitchCase="'user'">
+    <dnt-employee></dnt-employee>
+  </div>
+  <div *ngSwitchDefault>
+    This is default view
+  </div>
+</div>
