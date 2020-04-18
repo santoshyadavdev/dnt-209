@@ -15,18 +15,21 @@ export class DepartmentComponent implements OnInit {
     hod: 'Sam'
   };
 
-  departmentList : Array<Department> = [
-    {  id: 1,
+  departmentList: Array<Department> = [
+    {
+      id: 1,
       name: 'IT',
       count: 200,
       hod: 'Sam'
     },
-    {  id: 2,
+    {
+      id: 2,
       name: 'Admin',
       count: 10,
       hod: 'Sam'
     },
-    {  id: 3,
+    {
+      id: 3,
       name: 'Finance',
       count: 400,
       hod: 'Sam'
@@ -41,7 +44,11 @@ export class DepartmentComponent implements OnInit {
   }
 
   showDetails() {
-    this.visible =!this.visible;
+    this.visible = !this.visible;
+  }
+
+  trackByFn(i: number, data: Department) {
+    return data.id;
   }
 
 }

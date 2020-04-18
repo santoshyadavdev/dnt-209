@@ -25,7 +25,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let dept of departmentList;let i=index;let e=even;let o=odd">
+    <tr *ngFor="let dept of departmentList;let i=index;let e=even;let o=odd;trackBy:trackByFn">
       <td>{{i}}</td>
       <td>{{e}}</td>
       <td>{{o}}</td>
