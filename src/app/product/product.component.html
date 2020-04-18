@@ -1,0 +1,7 @@
+<h1>
+  Products
+</h1>
+
+<dnt-product-list [productList]="products" (selectProduct)="receiveFromChild($event)"></dnt-product-list>
+
+{{selectedProduct | json}}

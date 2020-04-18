@@ -1,0 +1,30 @@
+<h1>
+  Product List
+</h1>
+<!-- convert this to table -->
+{{productList| json}}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Mfd</th>
+      <th>Select</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of productList">
+      <td>{{product.id}}</td>
+      <td [innerText]="product.name"></td>
+      <td>{{product.price}}</td>
+      <td>{{product.mfd}}</td>
+      <td>
+        <button class="btn btn-primary" (click)="selectedProduct(product)">
+          Select Product
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

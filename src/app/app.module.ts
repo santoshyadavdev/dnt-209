@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { DepartmentComponent } from './department/department.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProductComponent } from './product/product.component';
+import { ProductListComponent } from './product/product-list/product-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeComponent,
-    DepartmentComponent
+    DepartmentComponent,
+    ProductComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
