@@ -16,6 +16,8 @@ export class ProductListComponent implements OnInit {
 
   @Output() selectProduct = new EventEmitter<Product>();
 
+  visible = true;
+
   // @Output() selectProduct= new EventEmitter<Product>();
 
   constructor() { }
@@ -25,6 +27,10 @@ export class ProductListComponent implements OnInit {
 
   selectedProduct(product: Product) {
     this.selectProduct.emit(product);
+  }
+
+  hideProduct() {
+    this.visible =!this.visible;
   }
 
 }
