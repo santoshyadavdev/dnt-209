@@ -2,7 +2,7 @@ import {
   Component, OnInit,
   Input, Output, EventEmitter, ChangeDetectionStrategy, OnChanges, SimpleChanges
 } from '@angular/core';
-import { Product } from '../product';
+import { Product } from '../models/product';
 
 @Component({
   selector: 'dnt-product-list',
