@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 
 @Component({
   selector: 'dnt-root',
@@ -7,8 +7,12 @@ import { Component } from '@angular/core';
   //   <h2>Hello world!<h2>`,
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements DoCheck {
   title = 'dnt209';
 
   role = 'users';
+
+  ngDoCheck() {
+    console.log('Do Check is called');
+  }
 }

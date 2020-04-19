@@ -1,6 +1,6 @@
 import {
   Component, OnInit,
-  Input, Output, EventEmitter, ChangeDetectionStrategy
+  Input, Output, EventEmitter, ChangeDetectionStrategy, OnChanges, SimpleChanges
 } from '@angular/core';
 import { Product } from '../product';
 
@@ -10,9 +10,11 @@ import { Product } from '../product';
   styleUrls: ['./product-list.component.css'],
   changeDetection : ChangeDetectionStrategy.OnPush
 })
-export class ProductListComponent implements OnInit {
+export class ProductListComponent implements OnInit, OnChanges {
 
   @Input() productList: Product[] = [];
+
+  @Input() title = '';
 
   @Output() selectProduct = new EventEmitter<Product>();
 
@@ -21,6 +23,10 @@ export class ProductListComponent implements OnInit {
   // @Output() selectProduct= new EventEmitter<Product>();
 
   constructor() { }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes);
+  }
 
   ngOnInit(): void {
   }
