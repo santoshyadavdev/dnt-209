@@ -9,9 +9,7 @@ Products
 <button class="btn btn-success" (click)="addProduct()">
   Add Product
 </button>
-<dnt-product-list
-[title]="'Product List'"
-[productList]="products"
-(selectProduct)="receiveFromChild($event)"></dnt-product-list>
+<dnt-product-list [title]="'Product List'" [productList]="products" (selectProduct)="receiveFromChild($event)">
+</dnt-product-list>
 
 {{selectedProduct | json}}

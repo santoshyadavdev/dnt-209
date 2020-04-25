@@ -8,7 +8,9 @@ export class ProductService {
 
   prodList: Product[] = [];
 
-  constructor() { }
+  constructor() {
+    console.log('Product Service in created');
+  }
 
   getProducts() {
     return this.prodList = [
@@ -16,5 +18,10 @@ export class ProductService {
       { id: 2, name: 'Blue Microphone', mfd: new Date('11-Mar-2020'), price: 12000 },
       { id: 3, name: 'One Plus 8 Pro', mfd: new Date('11-Apr-2019'), price: 85000 },
     ];
+  }
+
+  addProduct() {
+    this.prodList.push({ id: 5, name: 'One Plus 8', mfd: new Date('11-Apr-2020'), price: 65000 },
+    )
   }
 }

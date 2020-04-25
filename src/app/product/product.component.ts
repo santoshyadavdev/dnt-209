@@ -1,4 +1,6 @@
-import { Component, OnInit, ViewChild, AfterViewInit, ViewChildren, QueryList, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild,
+   AfterViewInit, ViewChildren, QueryList,
+   ElementRef, Self } from '@angular/core';
 import { Product } from './models/product';
 import { HeaderComponent } from '../header/header.component';
 import { ProductService } from './services/product.service';
@@ -7,7 +9,8 @@ import { ProductService } from './services/product.service';
 @Component({
   selector: 'dnt-product',
   templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css']
+  styleUrls: ['./product.component.css'],
+  providers: [ProductService]
 })
 export class ProductComponent implements OnInit, AfterViewInit {
 
@@ -23,7 +26,7 @@ export class ProductComponent implements OnInit, AfterViewInit {
 
   title = '';
 
-  constructor(private productService: ProductService) {
+  constructor(@Self() private productService: ProductService) {
 
   }
 
@@ -54,13 +57,14 @@ export class ProductComponent implements OnInit, AfterViewInit {
 
   addProduct() {
     // this.headerComponent.title = "New Component";
-    const product: Product = {
-      id: 4, name: 'IPhone 11', price: 85000, mfd: new Date('11-Jan-2020')
-    };
+    // const product: Product = {
+    //   id: 4, name: 'IPhone 11', price: 85000, mfd: new Date('11-Jan-2020')
+    // };
 
     // this.products.push(product);
     // this.products = this.products.concat([product]);
-    this.products = [...this.products, product];
+    // this.products = [...this.products, product];
+    this.productService.addProduct();
     this.title = 'New Product';
   }
 
