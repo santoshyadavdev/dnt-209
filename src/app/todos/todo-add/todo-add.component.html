@@ -1,0 +1,38 @@
+<h1>
+  Add Todo
+</h1>
+{{todo |json }}
+{{todoForm.invalid}}
+{{todoForm.valid}}
+{{todoForm.errors | json}}
+{{todoForm.pristine}}
+{{todoForm.dirty}}
+{{todoForm.value | json}}
+<form #todoForm="ngForm" (ngSubmit)="addTodo(todoForm)">
+  <div class="form-group">
+    <input required class="form-control" type="number" [(ngModel)]="todo.userId" name="userid" placeholder="User Id">
+  </div>
+  <div class="form-group">
+    <input #titleControl="ngModel" [ngModelOptions]="{ updateOn: 'submit' }" required minlength=6 maxlength=10
+      class="form-control" type="text" [(ngModel)]="todo.title" name="title" placeholder="Enter the Title">
+
+      <!-- <input #titleControl="ngModel" [ngModelOptions]="{ updateOn: 'blur' }" required minlength=6 maxlength=10
+      class="form-control" type="text" [(ngModel)]="todo.title" name="title" placeholder="Enter the Title">
+
+      <input #titleControl="ngModel" required minlength=6 maxlength=10
+      class="form-control" type="text" [(ngModel)]="todo.title" name="title" placeholder="Enter the Title"> -->
+    <div *ngIf="titleControl?.errors?.required && titleControl.dirty">
+      Please enter the Title!
+    </div>
+    <div *ngIf="titleControl?.errors?.minlength && titleControl.dirty">
+      Title should be of 6 character!
+    </div>
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="checkbox" [(ngModel)]="todo.completed" name="completed">
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary">Save</button>
+    <!-- <button [disabled]="todoForm.invalid" class="btn btn-primary">Save</button> -->
+  </div>
+</form>

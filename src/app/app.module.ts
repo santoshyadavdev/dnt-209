@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { ContainerComponent } from './container/container.component';
 import { TodosComponent } from './todos/todos.component';
 import { PhotosComponent } from './todos/photos/photos.component';
 import { ApiInterceptor } from './api.interceptor';
+import { TodoAddComponent } from './todos/todo-add/todo-add.component';
 
 @NgModule({
   declarations: [
@@ -25,13 +27,15 @@ import { ApiInterceptor } from './api.interceptor';
     HeaderComponent,
     ContainerComponent,
     TodosComponent,
-    PhotosComponent
+    PhotosComponent,
+    TodoAddComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true }
