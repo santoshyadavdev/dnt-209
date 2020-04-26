@@ -12,6 +12,7 @@ import { ProductListComponent } from './product/product-list/product-list.compon
 import { HeaderComponent } from './header/header.component';
 import { ContainerComponent } from './container/container.component';
 import { TodosComponent } from './todos/todos.component';
+import { PhotosComponent } from './todos/photos/photos.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { TodosComponent } from './todos/todos.component';
     ProductListComponent,
     HeaderComponent,
     ContainerComponent,
-    TodosComponent
+    TodosComponent,
+    PhotosComponent
   ],
   imports: [
     BrowserModule,

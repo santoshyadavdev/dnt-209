@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpRequest } from '@angular/common/http';
 import { Todo } from '../models/todo';
 
 @Injectable({
@@ -19,5 +19,13 @@ export class TodoService {
 
   updateTodo(todo: Todo){
     return this.http.put<Todo>(`https://jsonplaceholder.typicode.com/todos/${todo.id}`,todo);
+  }
+
+  getPhotos(){
+    const request = new HttpRequest('GET','https://jsonplaceholder.typicode.com/photos', {
+      reportProgress: true
+    });
+
+    return this.http.request(request);
   }
 }
