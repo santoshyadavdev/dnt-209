@@ -7,6 +7,7 @@ import {
   HttpHeaders
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { tap, catchError } from 'rxjs/operators';
 
 @Injectable()
 export class ApiInterceptor implements HttpInterceptor {
@@ -18,7 +19,9 @@ export class ApiInterceptor implements HttpInterceptor {
       let requestData: any = request.body;
       requestData.createdDate = new Date();
       const req = request.clone({ body: requestData, headers: new HttpHeaders().set('New-Access-Token', 'fdsdsgdfgfdg') });
-      return next.handle(req);
+      return next.handle(req).pipe(
+        tap((data)=> console.log(data)
+      ))
     }
     return next.handle(request);
   }
