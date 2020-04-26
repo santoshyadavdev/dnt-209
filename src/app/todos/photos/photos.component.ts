@@ -10,6 +10,9 @@ import { HttpEventType } from '@angular/common/http';
 export class PhotosComponent implements OnInit {
 
   loaded: number = 0;
+
+  photoList: Photos[] = [];
+
   constructor(private todoService: TodoService) { }
 
   ngOnInit(): void {
@@ -29,11 +32,19 @@ export class PhotosComponent implements OnInit {
           break;
         }
         case HttpEventType.Response: {
-          console.log(res.body);
-          break;
+          this.photoList = res.body as Photos[];
         }
       }
     })
   }
 
+}
+
+
+export interface Photos {
+  albumId: number;
+  id: number;
+  title: string;
+  url: string;
+  thumbnailUrl: string;
 }
