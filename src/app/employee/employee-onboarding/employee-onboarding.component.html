@@ -1,0 +1,60 @@
+{{onBoardingForm.invalid}}
+
+{{onBoardingForm.value | json}}
+
+<form [formGroup]="onBoardingForm">
+  <div *ngIf="onBoardingForm.get('age')">
+    <input class="form-control" type="text" formControlName="age" placeholder="Enter the name">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="text" formControlName="name" placeholder="Enter the name">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="text" formControlName="email" placeholder="Enter the name">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="date" formControlName="dob" placeholder="Enter the name">
+  </div>
+  <div formGroupName="address">
+    <div class="form-group">
+      <input class="form-control" type="text" formControlName="addrLine1" placeholder="Enter the address">
+    </div>
+    <div class="form-group">
+      <input class="form-control" type="text" formControlName="addrLine2" placeholder="Enter the address">
+    </div>
+    <div class="form-group">
+      <input class="form-control" type="text" formControlName="city" placeholder="Enter the city">
+    </div>
+    <div class="form-group">
+      <input class="form-control" type="text" formControlName="pin" placeholder="Enter the pin">
+    </div>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary" (click)="addExp()">Add Past Experience</button>
+  </div>
+
+  <div class="form-group">
+    <button class="btn btn-primary" (click)="removeAllExp()">Remove All Past Experience</button>
+  </div>
+  <div formArrayName="pastExp">
+    <div *ngFor="let exp of pastExp.controls;let i=index">
+      <div [formGroupName]="i">
+        <div class="form-group">
+          <input class="form-control" type="text" formControlName="orgName" placeholder="Enter the org name">
+        </div>
+        <div class="form-group">
+          <input class="form-control" type="date" formControlName="fromDate" placeholder="Enter Start Date">
+        </div>
+        <div class="form-group">
+          <input class="form-control" type="date" formControlName="toDate" placeholder="Enter end date">
+        </div>
+        <div class="form-group">
+          <input class="form-control" type="text" formControlName="role" placeholder="Enter your role">
+        </div>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-danger" (click)="removeExp(i)">Remove Past Experience</button>
+      </div>
+    </div>
+  </div>
+</form>
