@@ -2,6 +2,8 @@
 
 {{onBoardingForm.value | json}}
 
+{{onBoardingForm?.errors | json}}
+
 <button type="button" class="btn btn-primary" (click)="edit()">Edit</button>
 <br>
 <hr>
@@ -17,13 +19,21 @@
     <div *ngIf="onBoardingForm.get('name')?.errors?.minlength">
       Name should be more than 4 character!
     </div>
-    {{onBoardingForm.get('name')?.errors?.minlength | json}}
+    <div *ngIf="onBoardingForm.get('name')?.errors?.invalidName">
+      The name is invalid.
+    </div>
   </div>
   <div class="form-group">
     <input class="form-control" type="text" formControlName="email" placeholder="Enter the email">
   </div>
   <div class="form-group">
     <input class="form-control" type="date" formControlName="dob" placeholder="Enter the dob">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="password" formControlName="password" placeholder="Enter the password">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="password" formControlName="confirmPassword" placeholder="Confirm your password">
   </div>
   <div formGroupName="address">
     <div class="form-group">

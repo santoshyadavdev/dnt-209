@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, FormArray, Validators } from '@angular/forms';
 import { EmployeeService } from '../services/employee.service';
+import { CustomValidation } from '../customvalidation/custom.validation';
 
 @Component({
   selector: 'dnt-employee-onboarding',
@@ -20,9 +21,11 @@ export class EmployeeOnboardingComponent implements OnInit {
 
   ngOnInit(): void {
     this.onBoardingForm = this.fb.group({
-      name: new FormControl({ value: 'test', disabled: true }, { updateOn: 'blur', validators: [Validators.required, Validators.minLength(5)] }),
+      name: new FormControl({ value: 'test', disabled: true }, { updateOn: 'blur', validators: [Validators.required, Validators.minLength(5), CustomValidation.nameValidator] }),
       email: new FormControl('', [Validators.email, Validators.required]),
       dob: new FormControl(''),
+      password: new FormControl(''),
+      confirmPassword: new FormControl(''),
       address: this.fb.group({
         addrLine1: new FormControl('', Validators.required),
         addrLine2: new FormControl(''),
@@ -32,7 +35,7 @@ export class EmployeeOnboardingComponent implements OnInit {
       pastExp: this.fb.array([
         this.buildForm()
       ])
-    }, { updateOn: 'blur' });
+    }, { updateOn: 'blur', validators: [ CustomValidation.passwordValidator ] });
 
     this.employeeService.getOnboardingData().subscribe(data =>
       // this.onBoardingForm.setValue(data)
