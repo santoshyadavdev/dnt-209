@@ -10,7 +10,7 @@ import { pluck, tap } from 'rxjs/operators';
 })
 export class TodoDetailsComponent implements OnInit {
 
-  id$: Observable<any>;
+  id$: Observable<number>;
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
