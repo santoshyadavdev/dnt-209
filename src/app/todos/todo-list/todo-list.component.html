@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>UserID</th>
+      <th>Title</th>
+      <th>Completed</th>
+      <th>Detail</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let todo of todos">
+      <td>{{todo.id}}</td>
+      <td>{{todo.userId}}</td>
+      <td>{{todo.title}}</td>
+      <td>{{todo.completed}}</td>
+      <td>
+        <button class="btn btn-primary" [routerLink]="['/todos', todo.id]">Details</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

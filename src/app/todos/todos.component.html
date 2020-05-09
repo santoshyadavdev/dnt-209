@@ -5,6 +5,7 @@
 <button class="btn btn-success" (click)="updateTodo()">
   update Todo
 </button>
+<dnt-todo-list [todos]="todo$ | async"></dnt-todo-list>
 <dnt-todo-add></dnt-todo-add>
 <!-- <dnt-photos></dnt-photos>
 {{todo$ | async | json}} -->
