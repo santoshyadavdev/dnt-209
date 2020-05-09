@@ -26,6 +26,7 @@ import { MatListModule } from '@angular/material/list';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { TodosModule } from './todos/todos.module';
 import { EmployeeModule } from './employee/employee.module';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { EmployeeModule } from './employee/employee.module';
     ContainerComponent,
     PhotosComponent,
     MainNavComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

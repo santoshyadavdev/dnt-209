@@ -5,12 +5,14 @@ import { DepartmentComponent } from './department/department.component';
 import { ProductComponent } from './product/product.component';
 import { TodosComponent } from './todos/todos.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
+  { path:'login', component: LoginComponent },
   { path: 'department', component: DepartmentComponent },
   { path: 'product', component: ProductComponent },
-  { path: '', redirectTo: 'employee', pathMatch:'full' },
+  { path: '', redirectTo: 'login', pathMatch:'full' },
   { path:'**', component: PagenotfoundComponent }
 ];
 
