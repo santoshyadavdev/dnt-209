@@ -18,6 +18,14 @@ import { ApiInterceptor } from './api.interceptor';
 import { TodoAddComponent } from './todos/todo-add/todo-add.component';
 import { FormControlDemoComponent } from './employee/form-control-demo/form-control-demo.component';
 import { EmployeeOnboardingComponent } from './employee/employee-onboarding/employee-onboarding.component';
+import { MainNavComponent } from './main-nav/main-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +40,9 @@ import { EmployeeOnboardingComponent } from './employee/employee-onboarding/empl
     PhotosComponent,
     TodoAddComponent,
     FormControlDemoComponent,
-    EmployeeOnboardingComponent
+    EmployeeOnboardingComponent,
+    MainNavComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +50,13 @@ import { EmployeeOnboardingComponent } from './employee/employee-onboarding/empl
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true }
