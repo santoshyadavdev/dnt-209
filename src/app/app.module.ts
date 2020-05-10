@@ -12,7 +12,7 @@ import { ProductComponent } from './product/product.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
 import { HeaderComponent } from './header/header.component';
 import { ContainerComponent } from './container/container.component';
-import { PhotosComponent } from './todos/photos/photos.component';
+// import { PhotosComponent } from './todos/photos/photos.component';
 import { ApiInterceptor } from './api.interceptor';
 import { FormControlDemoComponent } from './employee/form-control-demo/form-control-demo.component';
 import { EmployeeOnboardingComponent } from './employee/employee-onboarding/employee-onboarding.component';
@@ -37,7 +37,6 @@ import { LoginComponent } from './login/login.component';
     ProductListComponent,
     HeaderComponent,
     ContainerComponent,
-    PhotosComponent,
     MainNavComponent,
     PagenotfoundComponent,
     LoginComponent
@@ -55,7 +54,7 @@ import { LoginComponent } from './login/login.component';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    TodosModule,
+    // TodosModule,
     EmployeeModule,
     AppRoutingModule,
   ],

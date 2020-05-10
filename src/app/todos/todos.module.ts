@@ -6,9 +6,11 @@ import { FormsModule } from '@angular/forms';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoRoutingModule } from './todo-routing.module';
 import { TodoDetailsComponent } from './todo-details/todo-details.component';
+import { PhotosComponent } from './photos/photos.component';
 
 @NgModule({
-  declarations: [TodosComponent, TodoAddComponent, TodoListComponent, TodoDetailsComponent,],
+  declarations: [TodosComponent, TodoAddComponent,
+     TodoListComponent, TodoDetailsComponent, PhotosComponent],
   imports: [
     CommonModule,
     FormsModule,
