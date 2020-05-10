@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  googleAPI: ''
+  googleAPI: '',
+  jsonPlaceHolderApi: 'https://jsonplaceholder.typicode.com/todos'
 };

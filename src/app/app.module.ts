@@ -27,6 +27,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { TodosModule } from './todos/todos.module';
 import { EmployeeModule } from './employee/employee.module';
 import { LoginComponent } from './login/login.component';
+import { APP_CONFIG, APP_VALUE } from './valueProvider/config.service';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { LoginComponent } from './login/login.component';
     AppRoutingModule,
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true },
+    { provide: APP_CONFIG, useValue: APP_VALUE }
   ],
   bootstrap: [AppComponent]
 })

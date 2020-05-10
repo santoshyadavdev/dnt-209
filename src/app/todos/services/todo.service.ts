@@ -1,31 +1,36 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpRequest, HttpHeaders } from '@angular/common/http';
 import { Todo } from '../models/todo';
+import { APP_CONFIG } from '../../valueProvider/config.service';
+import { Config } from '../../valueProvider/config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+    @Inject(APP_CONFIG) private appConfig: Config) {
+    console.log(appConfig.jsonPlaceHolderApi);
+  }
 
   getTodos() {
     const header = new HttpHeaders().set('X-ACCESS-TOKEN', 'sfsdgfhsdgufiyiu');
-    return this.http.get<Todo[]>('https://jsonplaceholder.typicode.com/todos', {
+    return this.http.get<Todo[]>(`${this.appConfig.jsonPlaceHolderApi}/todos`, {
       headers: header
     });
   }
 
   addTodo(todo: Todo) {
-    return this.http.post<Todo>('https://jsonplaceholder.typicode.com/todos', todo);
+    return this.http.post<Todo>(`${this.appConfig.jsonPlaceHolderApi}/todos`, todo);
   }
 
   updateTodo(todo: Todo) {
-    return this.http.put<Todo>(`https://jsonplaceholder.typicode.com/todos/${todo.id}`, todo);
+    return this.http.put<Todo>(`${this.appConfig.jsonPlaceHolderApi}/todos/${todo.id}`, todo);
   }
 
   getPhotos() {
-    const request = new HttpRequest('GET', 'https://jsonplaceholder.typicode.com/photos', {
+    const request = new HttpRequest('GET', `${this.appConfig.jsonPlaceHolderApi}/photos`, {
       reportProgress: true
     });
 

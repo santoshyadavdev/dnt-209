@@ -7,10 +7,12 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoRoutingModule } from './todo-routing.module';
 import { TodoDetailsComponent } from './todo-details/todo-details.component';
 import { PhotosComponent } from './photos/photos.component';
+import { APP_CONFIG, APP_VALUE } from '../valueProvider/config.service';
 
 @NgModule({
   declarations: [TodosComponent, TodoAddComponent,
-     TodoListComponent, TodoDetailsComponent, PhotosComponent],
+    TodoListComponent, TodoDetailsComponent,
+    PhotosComponent],
   imports: [
     CommonModule,
     FormsModule,
