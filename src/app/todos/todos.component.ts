@@ -2,6 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { TodoService } from './services/todo.service';
 import { Todo } from './models/todo';
 import { Subscription, Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+import { pluck } from 'rxjs/operators';
 
 @Component({
   selector: 'dnt-todos',
@@ -11,12 +13,16 @@ import { Subscription, Observable } from 'rxjs';
 export class TodosComponent implements OnInit, OnDestroy {
 
   // todoList: Todo[] = [];
-  todo$ : Observable<Todo[]>;
+  todo$: Observable<Todo[]>;
   subscription: Subscription;
-  constructor(private todoService: TodoService) { }
+  constructor(private todoService: TodoService,
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.todo$ = this.todoService.getTodos();
+    this.todo$ = this.route.data.pipe(
+      pluck('todoList')
+    )
+    // this.todo$ = this.todoService.getTodos();
     // this.subscription = this.todoService.getTodos().subscribe(res => this.todoList = res);
   }
 
@@ -27,7 +33,7 @@ export class TodosComponent implements OnInit, OnDestroy {
       userId: 2
     };
 
-    this.todoService.addTodo(todo).subscribe(res=> console.log(res));
+    this.todoService.addTodo(todo).subscribe(res => console.log(res));
   }
 
   updateTodo() {
@@ -38,7 +44,7 @@ export class TodosComponent implements OnInit, OnDestroy {
       id: 1
     };
 
-    this.todoService.updateTodo(todo).subscribe(res=> console.log(res));
+    this.todoService.updateTodo(todo).subscribe(res => console.log(res));
   }
 
   ngOnDestroy() {
