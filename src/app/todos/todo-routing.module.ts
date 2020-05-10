@@ -12,8 +12,8 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     canActivateChild: [AuthGuard],
     children: [
-      { path: 'add', component: TodoAddComponent, canActivate: [AuthGuard] },
-      { path: ':id', component: TodoDetailsComponent, canActivate: [AuthGuard] }
+      { path: 'add', component: TodoAddComponent },
+      { path: ':id', component: TodoDetailsComponent }
     ]
   },
 ];
