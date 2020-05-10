@@ -12,7 +12,8 @@ import { AuthGuard } from './guards/auth.guard';
 const routes: Routes = [
   {
     path: 'todos',
-    loadChildren: () => import('./todos/todos.module').then(m => m.TodosModule)
+    loadChildren: () => import('./todos/todos.module').then(m => m.TodosModule),
+    canLoad : [AuthGuard]
   },
   { path: 'login', component: LoginComponent },
   { path: 'department', component: DepartmentComponent, canActivate: [AuthGuard] },
