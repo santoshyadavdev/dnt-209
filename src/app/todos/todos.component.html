@@ -1,7 +1,7 @@
 <!-- <button class="btn btn-success" (click)="addTodo()">
   Add Todo
 </button> -->
-<button class="btn btn-primary" routerLink="add">Add Todo</button>
+<button class="btn btn-primary" [routerLink]="['add']" [queryParams]="{ id: 1 }">Add Todo</button>
 <br>
 <button class="btn btn-success" (click)="updateTodo()">
   update Todo

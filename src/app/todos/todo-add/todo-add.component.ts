@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Todo } from '../models/todo';
 import { TodoService } from '../services/todo.service';
 import { NgForm } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { pluck, tap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'dnt-todo-add',
@@ -17,9 +20,16 @@ export class TodoAddComponent implements OnInit {
     id: 0
   };
 
-  constructor(private todoService: TodoService) { }
+  id$: Observable<number>;
+
+  constructor(private todoService: TodoService,
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.id$ = this.route.queryParamMap.pipe(
+      tap(data => console.log(data)),
+      pluck('params','id')
+    )
   }
 
   addTodo(todoForm: NgForm) {
