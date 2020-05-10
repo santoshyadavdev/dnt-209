@@ -1,11 +1,15 @@
-<button class="btn btn-success" (click)="addTodo()">
+<!-- <button class="btn btn-success" (click)="addTodo()">
   Add Todo
-</button>
+</button> -->
+<button class="btn btn-primary" routerLink="add">Add Todo</button>
 <br>
 <button class="btn btn-success" (click)="updateTodo()">
   update Todo
 </button>
+<hr>
+<router-outlet></router-outlet>
+<hr>
 <dnt-todo-list [todos]="todo$ | async"></dnt-todo-list>
-<dnt-todo-add></dnt-todo-add>
+<!-- <dnt-todo-add></dnt-todo-add> -->
 <!-- <dnt-photos></dnt-photos>
 {{todo$ | async | json}} -->

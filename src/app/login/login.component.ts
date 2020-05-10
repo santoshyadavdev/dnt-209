@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginService } from './services/login.service';
 
 @Component({
   selector: 'dnt-login',
@@ -20,7 +21,8 @@ export class LoginComponent implements OnInit {
   }
 
   constructor(private fb: FormBuilder,
-      private router : Router) { }
+    private router: Router,
+    private loginService: LoginService) { }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -30,7 +32,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    if(this.userName.value === 'admin' && this.password.value==='admin') {
+    if (this.loginService.login(this.userName.value, this.password.value)) {
       // redirect to employee
       this.router.navigate(['/employee']);
     }
