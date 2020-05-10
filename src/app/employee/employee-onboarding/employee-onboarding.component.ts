@@ -35,7 +35,7 @@ export class EmployeeOnboardingComponent implements OnInit {
       pastExp: this.fb.array([
         this.buildForm()
       ])
-    }, { updateOn: 'blur', validators: [ CustomValidation.passwordValidator ] });
+    }, { updateOn: 'blur', validators: [CustomValidation.passwordValidator] });
 
     this.employeeService.getOnboardingData().subscribe(data =>
       // this.onBoardingForm.setValue(data)
@@ -73,6 +73,20 @@ export class EmployeeOnboardingComponent implements OnInit {
 
   saveEmployeeData() {
     console.log(this.onBoardingForm.getRawValue());
+    this.onBoardingForm.reset({
+      name: 'Employee 1',
+      email: 'emp1@test.com',
+      dob: new Date('10-Feb-2001'),
+      address : {},
+      pastExp: [
+        {
+          orgName: 'abc',
+          fromDate: new Date('1-jan-2009'),
+          toDate: new Date('1-jan-2015'),
+          role: 'admin'
+        }
+      ]
+    })
     // this.onBoardingForm.get('name').disable();
   }
 
