@@ -134,6 +134,12 @@
               "devServerTarget": "dnt209:serve:production"
             }
           }
+        },
+        "analyze": {
+          "builder": "@ngx-builders/analyze:analyze",
+          "options": {
+            "outputPath": "dist/dnt209"
+          }
         }
       }
     },
