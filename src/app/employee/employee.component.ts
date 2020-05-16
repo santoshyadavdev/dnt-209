@@ -1,11 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'dnt-employee',
   templateUrl: './employee.component.html',
-  styleUrls: ['./employee.component.css']
+  styleUrls: ['./employee.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class EmployeeComponent implements OnInit {
+
+  @HostBinding('class') class ='dnt-employee';
 
   name = 'Sam';
 
