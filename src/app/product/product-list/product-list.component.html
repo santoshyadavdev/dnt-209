@@ -2,11 +2,13 @@
   {{title}}
 </h1>
 <!-- convert this to table -->
-{{productList| json}}
+<!-- {{productList| json}} -->
 
 <button class="btn btn-danger" (click)="hideProduct()">
   Hide Product
 </button>
+
+<input class="form-control" type="number" [(ngModel)]="price" name="price" placeholder="Enter the price">
 
 <!-- {{visible}} -->
 <table class="table">
@@ -20,7 +22,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let product of productList">
+    <tr *ngFor="let product of productList | pricefilter : price">
       <td>{{product.id | percent}}</td>
       <td [innerText]="product.name | uppercase"></td>
       <td>{{product.price | currency : 'INR'}}</td>

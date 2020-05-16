@@ -21,6 +21,7 @@ import { BehaviorService } from '../department/behavior.service';
 export class ProductComponent implements OnInit, AfterViewInit {
 
   @ViewChild('name', { static: true }) nameDiv: ElementRef;
+  price= 0;
 
   @ViewChild(HeaderComponent)
   headerComponent: HeaderComponent;

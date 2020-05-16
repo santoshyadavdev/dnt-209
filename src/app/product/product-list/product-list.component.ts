@@ -20,6 +20,8 @@ export class ProductListComponent implements OnInit, OnChanges {
 
   visible = true;
 
+  price = 0;
+
   // @Output() selectProduct= new EventEmitter<Product>();
 
   constructor() { }

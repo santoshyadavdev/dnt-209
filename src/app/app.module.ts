@@ -28,6 +28,8 @@ import { TodosModule } from './todos/todos.module';
 import { EmployeeModule } from './employee/employee.module';
 import { LoginComponent } from './login/login.component';
 import { APP_CONFIG, APP_VALUE } from './valueProvider/config.service';
+import { WelcomePipe } from './pipes/welcome.pipe';
+import { PricefilterPipe } from './pipes/pricefilter.pipe';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { APP_CONFIG, APP_VALUE } from './valueProvider/config.service';
     ContainerComponent,
     MainNavComponent,
     PagenotfoundComponent,
-    LoginComponent
+    LoginComponent,
+    WelcomePipe,
+    PricefilterPipe
   ],
   imports: [
     BrowserModule,
