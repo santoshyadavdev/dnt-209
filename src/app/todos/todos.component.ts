@@ -19,10 +19,10 @@ export class TodosComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.todo$ = this.route.data.pipe(
-      pluck('todoList')
-    )
-    // this.todo$ = this.todoService.getTodos();
+    // this.todo$ = this.route.data.pipe(
+    //   pluck('todoList')
+    // )
+   this.todo$ = this.todoService.getTodos();
     // this.subscription = this.todoService.getTodos().subscribe(res => this.todoList = res);
   }
 

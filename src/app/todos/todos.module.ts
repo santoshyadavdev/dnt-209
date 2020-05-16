@@ -8,6 +8,7 @@ import { TodoRoutingModule } from './todo-routing.module';
 import { TodoDetailsComponent } from './todo-details/todo-details.component';
 import { PhotosComponent } from './photos/photos.component';
 import { APP_CONFIG, APP_VALUE } from '../valueProvider/config.service';
+import { todoProvider } from './todo.factory';
 
 @NgModule({
   declarations: [TodosComponent, TodoAddComponent,
@@ -17,6 +18,7 @@ import { APP_CONFIG, APP_VALUE } from '../valueProvider/config.service';
     CommonModule,
     FormsModule,
     TodoRoutingModule
-  ]
+  ],
+  providers: [todoProvider]
 })
 export class TodosModule { }

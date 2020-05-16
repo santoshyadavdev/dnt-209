@@ -4,14 +4,17 @@ import { Todo } from '../models/todo';
 import { APP_CONFIG } from '../../valueProvider/config.service';
 import { Config } from '../../valueProvider/config';
 
-@Injectable({
-  providedIn: 'root'
-})
+
+// @Injectable({
+//   providedIn: 'root'
+// })
 export class TodoService {
 
   constructor(private http: HttpClient,
+    private isLoggedn: boolean,
     @Inject(APP_CONFIG) private appConfig: Config) {
     console.log(appConfig.jsonPlaceHolderApi);
+    console.log(`login ${isLoggedn}`);
   }
 
   getTodos() {
