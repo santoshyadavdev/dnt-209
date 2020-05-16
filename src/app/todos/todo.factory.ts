@@ -5,12 +5,12 @@ import { Config } from '../valueProvider/config';
 import { TodoService } from './services/todo.service';
 
 export const todofactory = (http: HttpClient, loginService: LoginService,
-  appConfig: Config) => {
-  return new TodoService(http, loginService.isLoggedIn, APP_VALUE)
-}
+                            appConfig: Config) => {
+  return new TodoService(http, loginService.isLoggedIn, APP_VALUE);
+};
 
 export const todoProvider = {
   provide: TodoService,
   useFactory: todofactory,
-  deps: [HttpClient,LoginService,APP_CONFIG]
-}
+  deps: [HttpClient, LoginService, APP_CONFIG]
+};

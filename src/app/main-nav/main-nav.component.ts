@@ -18,6 +18,6 @@ export class MainNavComponent {
     );
 
   constructor(private breakpointObserver: BreakpointObserver,
-    public loginService: LoginService) {}
+              public loginService: LoginService) {}
 
 }

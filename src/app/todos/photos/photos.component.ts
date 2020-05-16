@@ -9,7 +9,7 @@ import { HttpEventType } from '@angular/common/http';
 })
 export class PhotosComponent implements OnInit {
 
-  loaded: number = 0;
+  loaded = 0;
 
   photoList: Photos[] = [];
 
@@ -35,7 +35,7 @@ export class PhotosComponent implements OnInit {
           this.photoList = res.body as Photos[];
         }
       }
-    })
+    });
   }
 
 }

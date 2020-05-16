@@ -23,13 +23,13 @@ export class TodoAddComponent implements OnInit {
   id$: Observable<number>;
 
   constructor(private todoService: TodoService,
-    private route: ActivatedRoute) { }
+              private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.id$ = this.route.queryParamMap.pipe(
       tap(data => console.log(data)),
-      pluck('params','id')
-    )
+      pluck('params', 'id')
+    );
   }
 
   addTodo(todoForm: NgForm) {

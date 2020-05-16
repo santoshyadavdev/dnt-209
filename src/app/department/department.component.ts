@@ -42,7 +42,7 @@ export class DepartmentComponent implements OnInit {
       name: 'marketing',
       count: 200,
       hod: 'Sam'
-    })
+    });
   }
 
 }

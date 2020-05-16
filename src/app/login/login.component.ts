@@ -21,14 +21,14 @@ export class LoginComponent implements OnInit {
   }
 
   constructor(private fb: FormBuilder,
-    private router: Router,
-    private loginService: LoginService) { }
+              private router: Router,
+              private loginService: LoginService) { }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
       userName: ['', Validators.required],
       password: ['', Validators.required]
-    })
+    });
   }
 
   login() {

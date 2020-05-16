@@ -6,6 +6,6 @@ export class LoggerService {
   constructor() { }
 
   log(data) {
-    console.log(data)
+    console.log(data);
   }
 }

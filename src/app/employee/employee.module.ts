@@ -10,7 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [EmployeeComponent, FormControlDemoComponent,
-    EmployeeOnboardingComponent,],
+    EmployeeOnboardingComponent, ],
   imports: [
     CommonModule,
     EmployeeRoutingModule,

@@ -21,6 +21,6 @@ export class EmployeeService {
           role: 'admin'
         }
       ]
-    })
+    });
   }
 }

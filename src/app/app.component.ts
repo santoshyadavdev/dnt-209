@@ -15,9 +15,9 @@ export class AppComponent implements DoCheck {
   role = 'users';
 
   constructor(@SkipSelf() private productService: ProductService,
-    @Optional() private logger: LoggerService) {
-      if(logger) {
-        this.logger.log('test')
+              @Optional() private logger: LoggerService) {
+      if (logger) {
+        this.logger.log('test');
       }
   }
 

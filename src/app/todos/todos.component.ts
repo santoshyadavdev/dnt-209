@@ -16,7 +16,7 @@ export class TodosComponent implements OnInit, OnDestroy {
   todo$: Observable<Todo[]>;
   subscription: Subscription;
   constructor(private todoService: TodoService,
-    private route: ActivatedRoute) { }
+              private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     // this.todo$ = this.route.data.pipe(

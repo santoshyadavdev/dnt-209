@@ -6,4 +6,4 @@ export const APP_CONFIG = new InjectionToken<Config>('appconfig');
 
 export const APP_VALUE: Config = {
   jsonPlaceHolderApi: environment.jsonPlaceHolderApi
-}
+};

@@ -16,12 +16,12 @@ export class ApiInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     if (request.method === 'POST') {
-      let requestData: any = request.body;
+      const requestData: any = request.body;
       requestData.createdDate = new Date();
       const req = request.clone({ body: requestData, headers: new HttpHeaders().set('New-Access-Token', 'fdsdsgdfgfdg') });
       return next.handle(req).pipe(
-        tap((data)=> console.log(data)
-      ))
+        tap((data) => console.log(data)
+      ));
     }
     return next.handle(request);
   }

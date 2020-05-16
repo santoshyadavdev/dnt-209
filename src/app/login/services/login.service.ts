@@ -12,11 +12,11 @@ export class LoginService {
 
   login(userName: string, password: string) {
     if (userName === 'admin' && password === 'admin') {
-      this.isLoggedIn =true;
+      this.isLoggedIn = true;
       this.isAdmin = true;
     }
     if (userName === 'user' && password === 'user') {
-      this.isLoggedIn =true;
+      this.isLoggedIn = true;
     }
     return this.isLoggedIn;
   }

@@ -5,18 +5,18 @@ import { Directive, ElementRef, Renderer2, HostListener, Input } from '@angular/
 })
 export class HoverDirective {
 
-  @Input() color= '';
+  @Input() color = '';
 
   constructor(private el: ElementRef, private renderer: Renderer2) {
-    console.log(el)
+    console.log(el);
   }
 
   @HostListener('mouseover') onmouseover() {
-    this.renderer.setStyle(this.el.nativeElement , 'background-color', this.color)
+    this.renderer.setStyle(this.el.nativeElement , 'background-color', this.color);
   }
 
   @HostListener('mouseout') onmouseout() {
-    this.renderer.setStyle(this.el.nativeElement , 'background-color', 'white')
+    this.renderer.setStyle(this.el.nativeElement , 'background-color', 'white');
   }
 
 

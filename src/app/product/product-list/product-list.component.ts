@@ -38,7 +38,7 @@ export class ProductListComponent implements OnInit, OnChanges {
   }
 
   hideProduct() {
-    this.visible =!this.visible;
+    this.visible = !this.visible;
   }
 
 }

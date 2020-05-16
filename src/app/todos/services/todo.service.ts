@@ -11,8 +11,8 @@ import { Config } from '../../valueProvider/config';
 export class TodoService {
 
   constructor(private http: HttpClient,
-    private isLoggedn: boolean,
-    @Inject(APP_CONFIG) private appConfig: Config) {
+              private isLoggedn: boolean,
+              @Inject(APP_CONFIG) private appConfig: Config) {
     console.log(appConfig.jsonPlaceHolderApi);
     console.log(`login ${isLoggedn}`);
   }

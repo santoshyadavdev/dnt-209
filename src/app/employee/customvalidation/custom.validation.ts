@@ -6,7 +6,7 @@ export class CustomValidation {
     const nameValue = name.value as string;
 
     if (nameValue.includes('test')) {
-      return { invalidName: true }
+      return { invalidName: true };
     }
     return null;
   }
@@ -14,8 +14,8 @@ export class CustomValidation {
   static passwordValidator(form: FormGroup): ValidationErrors | null {
       const password = form.get('password').value as string;
       const confirmPassword = form.get('confirmPassword').value as string;
-      if(password !== confirmPassword) {
-        return { invalidPassword: true }
+      if (password !== confirmPassword) {
+        return { invalidPassword: true };
       }
       return null;
   }

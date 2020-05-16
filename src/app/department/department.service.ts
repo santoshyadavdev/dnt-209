@@ -9,7 +9,7 @@ export class DepartmentService {
 
   department: Department[] = [];
 
-  deptSubject= new Subject<Department[]>();
+  deptSubject = new Subject<Department[]>();
 
   constructor() { }
 

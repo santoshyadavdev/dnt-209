@@ -21,7 +21,7 @@ import { BehaviorService } from '../department/behavior.service';
 export class ProductComponent implements OnInit, AfterViewInit {
 
   @ViewChild('name', { static: true }) nameDiv: ElementRef;
-  price= 0;
+  price = 0;
 
   @ViewChild(HeaderComponent)
   headerComponent: HeaderComponent;
@@ -36,7 +36,7 @@ export class ProductComponent implements OnInit, AfterViewInit {
   departmentList$: Observable<Array<Department>>;
 
   constructor(@Self() private productService: ProductService,
-    private deptService: BehaviorService) {
+              private deptService: BehaviorService) {
 
   }
 
@@ -52,7 +52,7 @@ export class ProductComponent implements OnInit, AfterViewInit {
     // this.title = 'Product'
     this.headerChildren.forEach((header: HeaderComponent) =>
       header.title = 'New Product'
-    )
+    );
   }
 
   ngAfterViewChecked() {

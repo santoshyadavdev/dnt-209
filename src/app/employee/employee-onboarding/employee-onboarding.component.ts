@@ -17,7 +17,7 @@ export class EmployeeOnboardingComponent implements OnInit {
   }
 
   constructor(private fb: FormBuilder,
-    private employeeService: EmployeeService) { }
+              private employeeService: EmployeeService) { }
 
   ngOnInit(): void {
     this.onBoardingForm = this.fb.group({
@@ -49,7 +49,7 @@ export class EmployeeOnboardingComponent implements OnInit {
   addExp() {
     const ageControl: FormControl = new FormControl('');
     this.onBoardingForm.addControl('age', ageControl);
-    this.pastExp.push(this.buildForm())
+    this.pastExp.push(this.buildForm());
   }
 
 
@@ -86,7 +86,7 @@ export class EmployeeOnboardingComponent implements OnInit {
           role: 'admin'
         }
       ]
-    })
+    });
     // this.onBoardingForm.get('name').disable();
   }
 

@@ -10,7 +10,7 @@ import { ProductService } from '../product/services/product.service';
 })
 export class ContainerComponent implements OnInit, AfterContentInit {
 
-  @ContentChild(DepartmentComponent) departmentComponent : DepartmentComponent;
+  @ContentChild(DepartmentComponent) departmentComponent: DepartmentComponent;
 
   constructor(@Host() private productService: ProductService) { }
 

@@ -9,7 +9,7 @@ import { LoginService } from '../login/services/login.service';
 export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
 
   constructor(private loginService: LoginService,
-    private router: Router) { }
+              private router: Router) { }
 
   canActivate(
     next: ActivatedRouteSnapshot,

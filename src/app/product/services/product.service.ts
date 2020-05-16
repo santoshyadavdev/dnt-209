@@ -22,6 +22,6 @@ export class ProductService {
 
   addProduct() {
     this.prodList.push({ id: 5, name: 'One Plus 8', mfd: new Date('11-Apr-2020'), price: 65000 },
-    )
+    );
   }
 }

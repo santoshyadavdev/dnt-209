@@ -8,7 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 export class BehaviorService {
   department: Department[] = [];
 
-  deptSubject= new BehaviorSubject<Department[]>([]);
+  deptSubject = new BehaviorSubject<Department[]>([]);
 
   constructor() { }
 
