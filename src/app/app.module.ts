@@ -31,6 +31,7 @@ import { APP_CONFIG, APP_VALUE } from './valueProvider/config.service';
 import { WelcomePipe } from './pipes/welcome.pipe';
 import { PricefilterPipe } from './pipes/pricefilter.pipe';
 import { HoverDirective } from './directives/hover.directive';
+import { Dtn209Module } from 'dtn209';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { HoverDirective } from './directives/hover.directive';
     // TodosModule,
     EmployeeModule,
     AppRoutingModule,
+    Dtn209Module
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true },
