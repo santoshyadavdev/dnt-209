@@ -30,6 +30,7 @@ import { LoginComponent } from './login/login.component';
 import { APP_CONFIG, APP_VALUE } from './valueProvider/config.service';
 import { WelcomePipe } from './pipes/welcome.pipe';
 import { PricefilterPipe } from './pipes/pricefilter.pipe';
+import { HoverDirective } from './directives/hover.directive';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { PricefilterPipe } from './pipes/pricefilter.pipe';
     PagenotfoundComponent,
     LoginComponent,
     WelcomePipe,
-    PricefilterPipe
+    PricefilterPipe,
+    HoverDirective
   ],
   imports: [
     BrowserModule,
