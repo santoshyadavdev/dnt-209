@@ -8,6 +8,9 @@
   {{department.count}}
 </div>
 
+{{departmentList$ | async | json}}
+
+<button (click)="addDepartment()">Add Department</button>
 
 <button (click)="showDetails()">{{visible? 'hide': 'show'}}</button>
 
@@ -27,7 +30,7 @@
   </thead>
   <tbody>
     <tr [ngClass]="e?'even':'odd'"
-      *ngFor="let dept of departmentList;let i=index;let e=even;let o=odd;trackBy:trackByFn">
+      *ngFor="let dept of departmentList$ | async;let i=index;let e=even;let o=odd;trackBy:trackByFn">
       <td>{{i}}</td>
       <td>{{e}}</td>
       <td>{{o}}</td>

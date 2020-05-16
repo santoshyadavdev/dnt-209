@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Department } from './department';
+import { DepartmentService } from './department.service';
+import { Observable } from 'rxjs';
+import { BehaviorService } from './behavior.service';
 
 @Component({
   selector: 'dnt-department',
@@ -15,32 +18,14 @@ export class DepartmentComponent implements OnInit {
     hod: 'Sam'
   };
 
-  departmentList: Array<Department> = [
-    {
-      id: 1,
-      name: 'IT',
-      count: 200,
-      hod: 'Sam'
-    },
-    {
-      id: 2,
-      name: 'Admin',
-      count: 10,
-      hod: 'Sam'
-    },
-    {
-      id: 3,
-      name: 'Finance',
-      count: 400,
-      hod: 'Sam'
-    }
-  ]
+  departmentList$: Observable<Array<Department>>;
 
   visible = true;
 
-  constructor() { }
+  constructor(private deptService: BehaviorService) { }
 
   ngOnInit(): void {
+    this.departmentList$ = this.deptService.getDepartment();
   }
 
   showDetails() {
@@ -49,6 +34,15 @@ export class DepartmentComponent implements OnInit {
 
   trackByFn(i: number, data: Department) {
     return data.id;
+  }
+
+  addDepartment() {
+    this.deptService.addDepartment({
+      id: 2,
+      name: 'marketing',
+      count: 200,
+      hod: 'Sam'
+    })
   }
 
 }

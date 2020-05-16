@@ -1,9 +1,15 @@
-import { Component, OnInit, ViewChild,
-   AfterViewInit, ViewChildren, QueryList,
-   ElementRef, Self } from '@angular/core';
+import {
+  Component, OnInit, ViewChild,
+  AfterViewInit, ViewChildren, QueryList,
+  ElementRef, Self
+} from '@angular/core';
 import { Product } from './models/product';
 import { HeaderComponent } from '../header/header.component';
 import { ProductService } from './services/product.service';
+import { DepartmentService } from '../department/department.service';
+import { Observable } from 'rxjs';
+import { Department } from '../department/department';
+import { BehaviorService } from '../department/behavior.service';
 
 
 @Component({
@@ -14,7 +20,7 @@ import { ProductService } from './services/product.service';
 })
 export class ProductComponent implements OnInit, AfterViewInit {
 
-  @ViewChild('name', {static: true}) nameDiv: ElementRef;
+  @ViewChild('name', { static: true }) nameDiv: ElementRef;
 
   @ViewChild(HeaderComponent)
   headerComponent: HeaderComponent;
@@ -26,11 +32,15 @@ export class ProductComponent implements OnInit, AfterViewInit {
 
   title = '';
 
-  constructor(@Self() private productService: ProductService) {
+  departmentList$: Observable<Array<Department>>;
+
+  constructor(@Self() private productService: ProductService,
+    private deptService: BehaviorService) {
 
   }
 
   ngOnInit(): void {
+    this.departmentList$ = this.deptService.getDepartment();
     this.products = this.productService.getProducts();
     // this.headerComponent.title = 'Product';
     this.nameDiv.nativeElement.innerText = 'Test';
