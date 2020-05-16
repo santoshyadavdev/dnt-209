@@ -21,10 +21,10 @@
   </thead>
   <tbody>
     <tr *ngFor="let product of productList">
-      <td>{{product.id}}</td>
-      <td [innerText]="product.name"></td>
-      <td>{{product.price}}</td>
-      <td>{{product.mfd}}</td>
+      <td>{{product.id | percent}}</td>
+      <td [innerText]="product.name | uppercase"></td>
+      <td>{{product.price | currency : 'INR'}}</td>
+      <td>{{product.mfd | date : 'dd-MM-yyyy' }}</td>
       <td>
         <button class="btn btn-primary" (click)="selectedProduct(product)">
           Select Product
