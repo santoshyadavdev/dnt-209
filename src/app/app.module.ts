@@ -32,6 +32,8 @@ import { WelcomePipe } from './pipes/welcome.pipe';
 import { PricefilterPipe } from './pipes/pricefilter.pipe';
 import { HoverDirective } from './directives/hover.directive';
 import { Dtn209Module } from 'dtn209';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -65,7 +67,8 @@ import { Dtn209Module } from 'dtn209';
     // TodosModule,
     EmployeeModule,
     AppRoutingModule,
-    Dtn209Module
+    Dtn209Module,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true },
